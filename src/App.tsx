@@ -1,6 +1,6 @@
-// App.tsx
 import React, { useEffect, useState } from 'react';
 import './App.css';
+
 const App: React.FC = () => {
     const [showSplashScreen, setShowSplashScreen] = useState(true);
     const [countdown, setCountdown] = useState(3);
@@ -24,20 +24,25 @@ const App: React.FC = () => {
         <div>
             {showSplashScreen ? (
                 <div className="splash-screen-container">
-                  <h1 className="splash-screen-title">
-                  <span className="white-text">Raiskale</span>
-                    <span className="green-text">.com</span>
-                    <h2 className="Countdown">Site in {countdown} seconds</h2>
+                    <h1 className="splash-screen-title">
+                        <span className="white-text">Raiskale</span>
+                        <span className="green-text">.com</span>
+                        <h2 className="Countdown">Site in {countdown} seconds</h2>
                     </h1>
-                </div>  
+                </div>
             ) : (
-<div className="Mainsite">
-    <h1 className="MainsiteTitle">
-        <span className="white-text">Raiskale</span>
-        <span className="green-text">.com</span>
-    </h1>
-    {/* Add your main site content here */}
-</div>
+                
+                <div className="Mainsite">
+                    <h1 className="MainsiteTitle">
+                        <span className="white-text">Raiskale</span>
+                        <span className="green-text">.com</span>
+                    </h1>
+                    {/* Add your main site content here */}
+                    <div className="relative h-full w-full bg-black">
+                        <div className="absolute bottom-0 left-0 right-0 top-0 bg-gradient"></div>
+                        <div className="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-radial-gradient"></div>
+                    </div>
+                </div>
             )}
         </div>
     );
