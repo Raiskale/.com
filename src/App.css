@@ -59,10 +59,17 @@
 /* Media query for smaller screens */
 @media only screen and (max-width: 600px) {
   .MainsiteTitle {
-      font-size: 1.5em; /* Adjust font size for smaller screens */
-      margin-bottom: 95%; /* Adjust margin for smaller screens */
-      margin-right: 50%; /* Reset margin-right for smaller screens */
-      justify-content: flex-start; /* Align text to the left on smaller screens */
-      padding-left: 50px; /* Add padding to ensure text is fully visible */
+      font-size: 1.5em; 
+      margin-bottom: 100%; 
+      margin-right: 70%; 
+      justify-content: flex-start; 
+      padding-left: 40px; 
+  }
+}
+@media only screen and (min-width: 601px) {
+  .MainsiteTitle {
+      font-size: 3em; /* Adjust font size for larger screens */
+      margin-right: 70%;
+      padding-left: 50px; 
   }
 }
