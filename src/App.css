@@ -44,7 +44,8 @@
   margin-right: 85%;
   display: flex;
   justify-content: center;
-
+  align-items: center;
+  flex-direction: row; /* Flex direction row for both larger and smaller screens */
 }
 
 .white-text {
@@ -53,4 +54,15 @@
 
 .green-text {
   color: rgb(0, 255, 0); /* Text color */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+  .MainsiteTitle {
+      font-size: 1.5em; /* Adjust font size for smaller screens */
+      margin-bottom: 95%; /* Adjust margin for smaller screens */
+      margin-right: 50%; /* Reset margin-right for smaller screens */
+      justify-content: flex-start; /* Align text to the left on smaller screens */
+      padding-left: 50px; /* Add padding to ensure text is fully visible */
+  }
 }
