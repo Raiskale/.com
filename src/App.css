@@ -71,8 +71,7 @@
   font-size: 2em; /* Adjust font size as needed */
   margin-bottom: 45%; /* Adjust margin as needed */
   margin-right: 90%;
-  
-  display: sticky;
+  position: fixed;
   justify-content: center;
   align-items: center;
   font-weight: 700;
@@ -126,5 +125,12 @@
       margin-right: 70%;
       padding-left: 50px; 
       font-weight: 700;
+  }
+  .splash-screen-title {
+    font-size: 50px; /* Adjust font size as needed */
+    padding-bottom: 0%; /* Adjust padding as needed */
+    padding-right: 70%;
+    padding-left: 5px;
+    font-weight: 700;
   }
 }
