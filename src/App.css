@@ -1,4 +1,7 @@
 /* App.css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 .splash-screen-container {
   background-color: 	#181818; /* Background color */
@@ -13,7 +16,16 @@
   text-align: center; /* Center text horizontally */
     /* Adjust margin as needed */
 }
+.line {
+  position: fixed;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+ background-color: #181818;
+ box-shadow: inset 0 2px 4px 0 rgba(226, 225, 225, 0.05);
 
+}
 .splash-screen-title {
   font-size: 50px; /* Adjust font size as needed */
   padding-bottom: 0%; /* Adjust padding as needed */
@@ -40,16 +52,27 @@
   flex-direction: column;
 }
 
+.container {
+  position: top;
+  
+}
 
+.small-image {
+  position: absolute;
+  top: 10px; /* Adjust this value to position the image vertically */
+  right: 20px; /* Adjust this value to position the image horizontally */
+  width: 150px; /* Adjust the width of the image */
+  height: 75px; /* Adjust the height of the image */
+}
 
 
 /* Additional styling for titles */
 .MainsiteTitle {
   font-size: 2em; /* Adjust font size as needed */
-  margin-bottom: 40%; /* Adjust margin as needed */
-  margin-right: 85%;
+  margin-bottom: 45%; /* Adjust margin as needed */
+  margin-right: 90%;
   
-  display: flex;
+  display: sticky;
   justify-content: center;
   align-items: center;
   flex-direction: row; /* Flex direction row for both larger and smaller screens */
@@ -79,6 +102,20 @@
     padding-bottom: 80px; /* Adjust padding as needed */
     margin-right: px; /* Adjust margin-right as needed */
     white-space: nowrap; /* Prevent text from wrapping onto multiple lines */
+
+  }
+  .container {
+    position: top;
+    
+  }
+  
+  .small-image {
+    position: absolute;
+    top: 20px; /* Adjust this value to position the image vertically */
+    right: 20px; /* Adjust this value to position the image horizontally */
+    width: 100px; /* Adjust the width of the image */
+    height: 45px; /* Adjust the height of the image */
+    
   }
 }
 @media only screen and (min-width: 601px) {
