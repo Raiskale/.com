@@ -75,6 +75,7 @@
   display: sticky;
   justify-content: center;
   align-items: center;
+  font-weight: 700;
   flex-direction: row; /* Flex direction row for both larger and smaller screens */
 }
 
@@ -94,6 +95,7 @@
       margin-right: 70%; 
       justify-content: flex-start; 
       padding-left: 40px; 
+      font-weight: 700;
   }
   .Countdown {
     color: rgb(255, 255, 255); /* Text color */
@@ -123,5 +125,6 @@
       font-size: 3em; /* Adjust font size for larger screens */
       margin-right: 70%;
       padding-left: 50px; 
+      font-weight: 700;
   }
 }
