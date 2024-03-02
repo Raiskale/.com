@@ -1,45 +1,33 @@
+// SplashScreen.tsx
 import React, { useEffect, useState } from 'react';
 
 interface SplashScreenProps {
-  onFinish: () => void;
-  splashText: string;
+    onFinish: () => void;
 }
 
-const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish, splashText }) => {
-  const [countdown, setCountdown] = useState(3); // Initial countdown value
-  const [display, setDisplay] = useState(true);
+const SplashScreen: React.FC<SplashScreenProps> = ({ onFinish }) => {
+    const [countdown, setCountdown] = useState(3);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDisplay(false);
-      onFinish();
-    }, countdown * 1000); // Countdown in seconds, multiply by 1000 to convert to milliseconds
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCountdown((prevCount) => prevCount - 1);
+        }, 1000);
 
-    const countdownInterval = setInterval(() => {
-      setCountdown((prevCountdown) => {
-        if (prevCountdown === 1) {
-          clearInterval(countdownInterval);
+        if (countdown === 0) {
+            clearInterval(timer);
+            onFinish(); // Finish the splash screen
         }
-        return prevCountdown - 1;
-      });
-    }, 1000); // Update countdown every second
 
-    return () => {
-      clearTimeout(timer);
-      clearInterval(countdownInterval);
-    };
-  }, [onFinish, countdown]);
+        return () => clearInterval(timer);
+    }, [countdown, onFinish]);
 
-  return (
-    <div style={{ textAlign: 'center', marginTop: '50vh', transform: 'translateY(-50%)' }}>
-      {display && (
+    return (
         <div>
-          <h1 style={{ fontSize: '3em' }}>{splashText}</h1>
-          <p style={{ display: 'block' }}>Main site in {countdown}</p>
+            <h1>Main site in {countdown} seconds</h1>
+            <h2>Raiskale.com</h2>
+            {/* You can add any other content here */}
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default SplashScreen;

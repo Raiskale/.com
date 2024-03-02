@@ -1,21 +1,46 @@
-import React, { useState } from 'react';
-import SplashScreen from './splashscreen';
-import MainSite from './mainsite';
+// App.tsx
+import React, { useEffect, useState } from 'react';
 import './App.css';
+const App: React.FC = () => {
+    const [showSplashScreen, setShowSplashScreen] = useState(true);
+    const [countdown, setCountdown] = useState(3);
 
-function App() {
-  const [showMainSite, setShowMainSite] = useState(false);
+    useEffect(() => {
+        if (showSplashScreen) {
+            const timer = setInterval(() => {
+                setCountdown((prevCount) => prevCount - 1);
+            }, 1000);
 
-  const handleSplashFinish = () => {
-    setShowMainSite(true);
-  };
+            if (countdown === 0) {
+                clearInterval(timer);
+                setShowSplashScreen(false); // Hide the splash screen after countdown
+            }
 
-  return (
-    <div className="App">
-      {!showMainSite && <SplashScreen onFinish={handleSplashFinish} splashText="Raiskale.com" />}
-      {showMainSite && <MainSite mainHeaderText="Raiskale.com" />}
-    </div>
-  );
-}
+            return () => clearInterval(timer);
+        }
+    }, [showSplashScreen, countdown]);
+
+    return (
+        <div>
+            {showSplashScreen ? (
+                <div className="splash-screen-container">
+                  <h1 className="splash-screen-title">
+                  <span className="white-text">Raiskale</span>
+                    <span className="green-text">.com</span>
+                    <h2 className="Countdown">Site in {countdown} seconds</h2>
+                    </h1>
+                </div>  
+            ) : (
+<div className="Mainsite">
+    <h1 className="MainsiteTitle">
+        <span className="white-text">Raiskale</span>
+        <span className="green-text">.com</span>
+    </h1>
+    {/* Add your main site content here */}
+</div>
+            )}
+        </div>
+    );
+};
 
 export default App;
