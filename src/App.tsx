@@ -47,7 +47,7 @@ const App: React.FC = () => {
                         <div className="line"></div>
                     </div>
                     <div className="container">
-      <img src=".\Green.png" alt="Small Image" className="small-image" />
+      <img src=".\Green.png" alt="" className="small-image" />
       {/* Other content of your component */}
     </div>
                 </div>
